@@ -18,7 +18,8 @@ int main()
     
     char calc[1];
     char room_type[10];
-    int meal_type, days, room_charge;
+    int meal_type, days;
+    float room_charge;
     printf("WELCOM TO PARADDIGM HOSPITAL\n");
     
     bool conti = true;
@@ -32,6 +33,14 @@ int main()
        
         printf("Invalid\nRoom type (S-single, T-two-bedded, F-for-bedded) : ");
     scanf("%s", room_type);
+    }
+    
+    if (strcmp(room_type, "S") == 0)    {
+        printf("You have chosen a single-bedded room\n\n");
+    } else if (strcmp(room_type, "T") == 0)    {
+        printf("You have chosen a two-bedded room\n\n");
+    }   else    {
+        printf("You have chosen a four-bedded room\n\n");
     }
     
     printf("Meal option (1-with meal, 2-without meal) : ");
@@ -66,7 +75,7 @@ int main()
         }
     }
     
-    printf("The ward charge is RM %d\n\n", room_charge);
+    printf("The ward charge is RM %0.2f\n\n", room_charge+(room_charge*0.06));
     
     printf("Calculate another ward charge? (Y-yes/N-no) : ");
     scanf("%s", calc);
